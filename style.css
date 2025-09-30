@@ -1,21 +1,40 @@
 /* --- ROOT VARIABLES & BASE STYLES --- */
 :root {
     /* Colors - Light Mode */
-    --bg-color: #F8F4F0; /* Ivory White */
-    --text-color: #1a1a1a; /* Near Black */
-    --primary-color: #00332b; /* Deep Emerald Green */
-    --secondary-color: #1a2a45; /* Royal Navy */
-    --accent-color: #d4af37; /* Champagne Gold */
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
+    --bg-color: #fdfaf7; /* Warm ivory background */
+    --text-color: #1a0d0d; /* Deep chocolate text */
+    --primary-color: #4b0404; /* Royal deep red (for headings/titles) */
+    --secondary-color: #a05252; /* Muted rose red, better contrast than beige */
+    --accent-color: #d4af37; /* Luxury gold */
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.4);
 
     /* Typography */
-    --font-heading: 'Cormorant Garamond', serif;
+    --font-heading: 'Aurora', serif;
     --font-body: 'Poppins', sans-serif;
     
     /* Transitions */
     --transition-speed: 0.5s;
 }
+
+.dark-mode {
+    /* Colors - Dark Mode */
+    --bg-color: #1a0d0d; /* Deep luxury maroon */
+    --text-color: #fdfaf7; /* Warm ivory text */
+    --primary-color: #f6e0d3; /* Peach beige headings in dark mode */
+    --secondary-color: #cbb5aa; /* Muted beige for subheadings */
+    --accent-color: #d4af37; /* Rich gold stays */
+    --glass-bg: rgba(0, 0, 0, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+    /* Typography */
+    --font-heading: 'Aurora', serif;
+    --font-body: 'Poppins', sans-serif;
+    
+    /* Transitions */
+    --transition-speed: 0.5s;
+
 
 .dark-mode {
     /* Colors - Dark Mode */
@@ -266,12 +285,12 @@ body {
 #ai-story {
     font-family: var(--font-heading);
     font-size: 1.3rem;
-    color: var(--primary-color);
+    color: var(--accent-color); /* Gold in light mode */
     margin-top: 1.5rem;
     font-weight: 600;
 }
 .dark-mode #ai-story {
-    color: var(--accent-color);
+    color: var(--secondary-color); /* Soft beige/peach in dark mode */
 }
 .about-image img {
     width: 100%;
