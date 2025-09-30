@@ -50,24 +50,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    // --- LOGO THEME SWITCHING ---
+    const logoThemeSwitch = () => {
+        const logoImage = document.getElementById('logoImage');
+        const body = document.body;
+
+        const updateLogo = () => {
+            if (body.classList.contains('dark-mode')) {
+                logoImage.src = 'https://i.ibb.co/rGJTTtFc/logo-dark.jpg';
+            } else {
+                logoImage.src = 'https://i.ibb.co/zhdfckyV/logo-light.jpg';
+            }
+        };
+
+        // Initial logo set
+        updateLogo();
+
+        return updateLogo;
+    };
+
     // --- DARK MODE TOGGLE ---
     const darkModeToggle = () => {
         const themeSwitcher = document.querySelector('.theme-switcher');
         const body = document.body;
+        const logoImage = document.getElementById('logoImage');
 
+        const lightLogo = 'https://i.ibb.co/zhdfckyV/logo-light.jpg';
+        const darkLogo = 'https://i.ibb.co/rGJTTtFc/logo-dark.jpg';
+
+        // Toggle dark mode on click
         themeSwitcher.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            // Save preference to localStorage
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            logoImage.src = body.classList.contains('dark-mode') ? darkLogo : lightLogo;
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
         });
 
         // Check for saved theme preference
         if (localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark-mode');
+            logoImage.src = darkLogo;
+        } else {
+            logoImage.src = lightLogo;
         }
     };
 
@@ -90,10 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     };
-    
-    // Initialize all functions
+
+    // --- INITIALIZE EVERYTHING ---
     gsapAnims();
     navbarScroll();
+    logoThemeSwitch();
     darkModeToggle();
     mobileMenu();
 

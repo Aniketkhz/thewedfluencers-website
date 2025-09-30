@@ -126,14 +126,16 @@ body {
     max-width: 100%;
     margin: 0 auto;
 }
-.nav-logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #fff;
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
-    flex-shrink: 0;
+.logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    transition: filter var(--transition-speed) ease;
+}
+
+#header.scrolled .logo-img {
+    filter: brightness(0.8);
+
 }
 #header.scrolled .nav-logo {
     color: var(--secondary-color);
