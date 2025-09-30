@@ -76,7 +76,7 @@ body {
 .theme-switcher {
     position: fixed;
     top: 25px;
-    right: 100px;
+    right: 5%;
     z-index: 1001;
     width: 60px;
     height: 30px;
@@ -123,6 +123,8 @@ body {
     align-items: center;
     height: 80px;
     padding: 0 5%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 .nav-logo {
     font-family: var(--font-heading);
@@ -131,6 +133,7 @@ body {
     color: #fff;
     text-decoration: none;
     transition: color var(--transition-speed) ease;
+    flex-shrink: 0;
 }
 #header.scrolled .nav-logo {
     color: var(--secondary-color);
@@ -141,7 +144,8 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
+    margin-right: 90px; /* Space for theme switcher */
 }
 .nav-link {
     color: #fff;
@@ -167,6 +171,18 @@ body {
 .nav-link:hover::after {
     width: 100%;
 }
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+    .theme-switcher { 
+        right: 20px; 
+        top: 25px; 
+    }
+    .nav-menu {
+        margin-right: 0;
+    }
+}
+
 .hamburger { display: none; cursor: pointer; }
 .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: #fff; transition: all 0.3s ease-in-out; }
 #header.scrolled .bar { background-color: var(--text-color); }
