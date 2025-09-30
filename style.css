@@ -28,13 +28,6 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-    /* Typography */
-    --font-heading: 'Aurora', serif;
-    --font-body: 'Poppins', sans-serif;
-    
-    /* Transitions */
-    --transition-speed: 0.5s;
-
 
 .dark-mode {
     /* Colors - Dark Mode */
