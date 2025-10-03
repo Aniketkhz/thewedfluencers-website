@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // --- INITIALIZE EVERYTHING ---
+    // --- INITIALIZE EVERYTHING --
     gsapAnims();
     navbarScroll();
     logoThemeSwitch();
